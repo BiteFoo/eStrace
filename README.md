@@ -76,11 +76,24 @@ Options:
 ### Setup
 
 ```bash
+# ubuntu18+
+
+# install lld
+sudo apt install lld 
 # check lld
 ld.lld -v
-rustup target add x86_64-unknown-linux-musl
+# install bpf-linker
 cargo install bpf-linker
+# 
+rustup toolchain install nightly
+rustup target add nightly-x86_64-unknown-linux-gnu
 ```
+
+build for x86_64 
+```
+rustup target add x86_64-unknown-linux-musl
+```
+
 And for android:
 ```bash
 rustup target add aarch64-unknown-linux-musl
